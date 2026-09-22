@@ -1,0 +1,191 @@
+1. What is the output of the expression print(10 // 3) in Python?
+       A. 3.3333333333333335
+       B. 3
+       C. 1
+       D. 3.0
+      ANSWER: B
+
+2. Which of the following correctly defines a single-element tuple containing the integer 42?
+       A. t = (42)
+       B. t = [42]
+       C. t = (42,)
+       D. t = {42}
+      ANSWER: C
+
+3. What is the default file access mode when opening a file using Python's built-in open() function?
+       A. 'w'
+       B. 'r'
+       C. 'a'
+       D. 'r+'
+      ANSWER: B
+
+4. In the HTTP protocol, which status code signifies that a request has succeeded and led to the creation of a new resource on the server?
+       A. 200 OK
+       B. 201 Created
+       C. 204 No Content
+       D. 302 Found
+      ANSWER: B
+
+5. What is the output of the expression print(-10 // 3) in Python?
+       A. -3
+       B. -3.33
+       C. -4
+       D. -3.0
+      ANSWER: C
+
+6. Given the string text = "PYTHON", what is the output of print(text[4:1:-1])?
+       A. OHT
+       B. OHTY
+       C. NOH
+       D. THO
+      ANSWER: A
+
+7. Consider the following Python code:
+a = [[1, 2], [3, 4]]
+b = a.copy()
+b[0][1] = 99
+b.append([5, 6])
+print(len(a), a[0][1])
+What is the output?
+       A. 2 99
+       B. 3 99
+       C. 2 2
+       D. 3 2
+      ANSWER: A
+
+8. Consider the following dictionary operations:
+data = {"a": 10, "b": 20}
+x = data.pop("c", 30)
+y = data.pop("a")
+print(x, y, len(data))
+What is the output?
+       A. 30 10 1
+       B. None 10 2
+       C. 30 10 2
+       D. KeyError is raised
+      ANSWER: A
+
+9. In a Python try-except-else-finally construct, under what condition does the code inside the else block execute?
+       A. Only when an exception is caught and handled by an except block
+       B. Only when the try block executes completely without raising any exceptions
+       C. Every time the construct runs, immediately before the finally block
+       D. Only when an unhandled exception is propagated
+      ANSWER: B
+
+10. Consider the following function definition:
+def process_data(a, /, b, *, c):
+    return a + b + c
+Which of the following function calls executes successfully without raising a TypeError?
+       A. process_data(a=1, b=2, c=3)
+       B. process_data(1, 2, 3)
+       C. process_data(1, b=2, c=3)
+       D. process_data(1, 2, 3, c=4)
+      ANSWER: C
+
+11. What is the output of the following nested function code?
+def outer():
+    x = 5
+    def inner():
+        nonlocal x
+        x += 10
+        return x
+    inner()
+    return x
+print(outer())
+       A. 5
+       B. 15
+       C. 10
+       D. UnboundLocalError is raised
+      ANSWER: B
+
+12. In Python OOP, if an attribute inside class Employee is defined as self.__salary = 50000, under what mangled name is it stored in the instance namespace?
+       A. emp.__salary
+       B. emp._salary
+       C. emp._Employee__salary
+       D. emp.__Employee_salary
+      ANSWER: C
+
+13. When serializing the Python dictionary payload = {"data": (1, 2), "active": True, "count": None} using json.dumps(payload), how are the tuple, boolean True, and None represented in the resulting JSON string?
+       A. (1, 2), True, and None
+       B. [1, 2], true, and null
+       C. [1, 2], True, and null
+       D. (1, 2), true, and nil
+      ANSWER: B
+
+14. In Python DB-API 2.0 (sqlite3), which syntax represents the correct and secure parameterized query execution to protect against SQL injection?
+       A. cursor.execute(f"SELECT * FROM emps WHERE id = {emp_id}")
+       B. cursor.execute("SELECT * FROM emps WHERE id = %s" % emp_id)
+       C. cursor.execute("SELECT * FROM emps WHERE id = ?", (emp_id,))
+       D. cursor.execute("SELECT * FROM emps WHERE id = :val" + str(emp_id))
+      ANSWER: C
+
+15. In RESTful API architecture and HTTP semantics, which HTTP method is classified as idempotent but NOT safe?
+       A. GET
+       B. POST
+       C. DELETE
+       D. PATCH
+      ANSWER: C
+
+16. In Pandas, how does range slicing differ between .loc and .iloc?
+       A. Both .loc and .iloc exclude the stop boundary
+       B. Both .loc and .iloc include the stop boundary
+       C. .loc includes the stop boundary, whereas .iloc excludes the stop boundary
+       D. .iloc includes the stop boundary, whereas .loc excludes the stop boundary
+      ANSWER: C
+
+17. Consider the following class hierarchy utilizing cooperative super() calls:
+class A:
+    def show(self):
+        return "A"
+class B(A):
+    def show(self):
+        return "B" + super().show()
+class C(A):
+    def show(self):
+        return "C" + super().show()
+class D(B, C):
+    def show(self):
+        return "D" + super().show()
+What is the output of print(D().show())?
+       A. DBA
+       B. DBCA
+       C. DCA
+       D. DBAC
+      ANSWER: B
+
+18. Consider the following generator function and its iteration:
+def gen_accumulator():
+    total = 0
+    for x in [1, 2, 3]:
+        total += x
+        yield total
+g = gen_accumulator()
+print(next(g), list(g), list(g))
+What is the output?
+       A. 1 [1, 3, 6] [1, 3, 6]
+       B. 1 [3, 6] []
+       C. 1 [3, 6] [3, 6]
+       D. 1 [1, 3, 6] []
+      ANSWER: B
+
+19. Consider the following function defined with a mutable default argument:
+def append_record(item, registry=[]):
+    registry.append(item)
+    return registry
+list1 = append_record("CPU")
+list2 = append_record("GPU", [])
+list3 = append_record("RAM")
+print(list1 is list3, list1, list2)
+What is the output?
+       A. False ['CPU'] ['GPU']
+       B. True ['CPU', 'RAM'] ['GPU']
+       C. False ['CPU', 'RAM'] ['GPU']
+       D. True ['CPU'] ['GPU']
+      ANSWER: B
+
+20. Given a 3D NumPy array created as arr = np.arange(24).reshape((2, 3, 4)), what is the shape and the first element sub[0, 0, 0] of the slice sub = arr[:, ::-1, 1:3]?
+       A. (2, 3, 2) and 9
+       B. (2, 3, 2) and 1
+       C. (2, 2, 2) and 9
+       D. (2, 3, 3) and 8
+      ANSWER: A
